@@ -7,31 +7,31 @@
 .main {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 2rem 0;
 }
 
 /* Header */
-.descuentos {
+.h3__container {
     background: #D1891C;
-    padding: 5px 0 5px 1.5rem;
+    padding: 5px 0 5px 1rem;
 }
 
-.descuentos h3 {
+h3 {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.main__head {
-    position: sticky;
-    top: -1px;
-    padding: 1rem 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.00);
+.h1__container {
     background: #00669F;
     box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.25);
     z-index: 20;
+    border: 1px solid rgba(0, 0, 0, 0.00);
+    position: sticky;
+    top: -1px;
+    padding: 1rem 1rem;
 }
 
 h1 {
@@ -55,6 +55,8 @@ h1 {
     z-index: 10;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 3px 5px -1px rgba(71, 71, 71, 0.7);
+
 }
 
 .plus {
@@ -177,28 +179,57 @@ h1 {
 
 /* Footer */
 .footer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     background: #00669F;
 }
 
-.footer__container {
+.footer .container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rights {
     color: #F3F3F3;
     padding: 1rem 0;
 }
 
 .logo {
     height: 25px;
-    padding: 10px 0px;
+    padding: 10px 0px 30px 0;
 }
 
 @media (min-width: 750px) {
-    .main {
+    .main .container, .h3__container .container, .h1__container .container, .footer .container {
+        max-width: 850px;
+        margin: auto;
         position: relative;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .h3__container .container {
+        padding: 5px 0;
+        justify-content: left;
+    }
+
+    .h3__container {
+        padding-left: 0;
+    }
+
+    h3, h1 {
+        width: 100%;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .card__container {
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 
     .card__harley {
@@ -211,5 +242,15 @@ h1 {
 
     .card__superman2 {
         display: block;
+    }
+
+    .footer .container {
+        align-items: center;
+    }
+
+    .logo {
+        position: absolute;
+        padding: 0;
+        right: 0px;
     }
 }
